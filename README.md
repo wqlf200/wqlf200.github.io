@@ -60,44 +60,13 @@ npm run dev
 npm run build
 ```
 
-构建产物将输出到 `docs` 目录（用于 GitHub Pages 托管）。
+构建产物将输出到 `dist` 目录。
 
 ### 预览生产构建
 
 ```bash
 npm run preview
 ```
-
-## 🌐 GitHub Pages 部署
-
-本站点托管于用户仓库 [wqlf200.github.io](https://github.com/wqlf200/wqlf200.github.io)，访问地址：**https://wqlf200.github.io**
-
-### 托管方式
-
-| 项目 | 配置 |
-|------|------|
-| 仓库名 | `wqlf200.github.io`（用户站点） |
-| 发布源 | `main` 分支 → `/docs` 文件夹 |
-| 站点 URL | `https://wqlf200.github.io/` |
-| Vite base | `/`（用户站点根路径） |
-
-### GitHub 后台设置
-
-1. 打开仓库 **Settings → Pages**
-2. **Build and deployment → Source** 选择 **Deploy from a branch**
-3. **Branch** 选 `main`，文件夹选 **`/docs`**
-4. 保存后等待 1–10 分钟生效
-
-### 本地构建并更新
-
-```bash
-npm run build          # 构建到 docs/，并生成 404.html 与 .nojekyll
-git add docs/ package.json vite.config.js
-git commit -m "Deploy site to docs folder"
-git push origin main
-```
-
-> **说明**：`docs/.nojekyll` 跳过 Jekyll 处理；`docs/404.html` 与 `index.html` 相同，用于 React Router 客户端路由刷新。
 
 ## 🎯 功能页面
 
