@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Geist:wght@400;500&display=swap');
+
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Geist', 'JetBrains Mono', monospace, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #39ff14;
+  cursor: crosshair;
+}
+
+/* 全局变量 - Cyberpunk Neon Theme */
+:root {
+  --crt-green: #39ff14;
+  --primary-color: #39ff14;
+  --primary-dim: #2ae500;
+  --secondary-color: #cccccc;
+  --text-color: #e2e2e2;
+  --bg-color: #000000;
+  --bg-dark: #131313;
+  --border-color: #3c4b35;
+  --surface-container: #1f1f1f;
+  --outline-variant: #3c4b35;
+}
+
+/* CRT 效果动画 */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  5% { opacity: 0.95; }
+  10% { opacity: 0.99; }
+  15% { opacity: 0.94; }
+  20% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes beam-sweep {
+  0% { top: -20%; }
+  100% { top: 120%; }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* CRT 扫描线覆盖层 */
+.scanline-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 100;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+.crt-beam {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 15vh;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(57, 255, 20, 0.03) 50%,
+    transparent 100%
+  );
+  z-index: 99;
+  pointer-events: none;
+  animation: beam-sweep 8s linear infinite;
+}
+
+/* 荧光文字发光效果 */
+.neon-text-glow {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+/* 发光边框 */
+.glow-sm {
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+.glow-lg {
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.4);
+}
+
+/* 背景网格 */
+.grid-bg {
+  background-image: radial-gradient(circle, #3c4b35 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* 按钮悬停效果 */
+.btn-neon-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-neon-hover:hover {
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.6);
+  transform: scale(1.02);
+  border-color: var(--crt-green);
+  background-color: var(--crt-green);
+  color: #000000;
+}
+
+/* 闪烁效果 */
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+/* 故障悬停效果 */
+.glitch-hover:hover {
+  animation: glitch 0.1s linear infinite;
+}
+
+/* 色差效果 */
+.chromatic-aberration:hover {
+  text-shadow: 2px 0 rgba(255,0,0,0.5), -2px 0 rgba(0,0,255,0.5), 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #113311;
+  border: 1px solid var(--crt-green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--crt-green);
+}
+
+/* 选中文本样式 */
+::selection {
+  background: var(--crt-green);
+  color: #000000;
+}

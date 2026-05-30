@@ -1,0 +1,278 @@
+/* 关于页面样式 */
+.about {
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+
+.about-main {
+  padding: 4rem 1.5rem;
+  padding-top: 6rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.about-hero {
+  margin-bottom: 4rem;
+}
+
+.about-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  color: var(--crt-green);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.about-title-name {
+  color: var(--primary-dim);
+  filter: brightness(1.25);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.status-dot-active {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--primary-dim);
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  box-shadow: 0 0 8px var(--crt-green);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-indicator p {
+  color: var(--primary-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Content Layout */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media (min-width: 768px) {
+  .about-content {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+.about-left {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .about-left {
+    grid-column: span 7;
+  }
+}
+
+.about-right {
+  grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+  .about-right {
+    grid-column: span 5;
+  }
+}
+
+.about-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--crt-green);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(57, 255, 20, 0.4);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: rgba(57, 255, 20, 0.8);
+  margin-bottom: 1rem;
+  max-width: 65ch;
+}
+
+.philosophy-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.philosophy-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: rgba(57, 255, 20, 0.9);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.list-marker {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--crt-green);
+  flex-shrink: 0;
+}
+
+.cv-button {
+  padding: 1rem 2rem;
+  border: 2px solid var(--crt-green);
+  background-color: transparent;
+  color: var(--crt-green);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cv-button:hover {
+  background-color: var(--crt-green);
+  color: #000000;
+  text-shadow: none;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.skill-card {
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  padding: 1.25rem;
+  background-color: rgba(10, 10, 10, 1);
+  transition: all 0.2s;
+}
+
+.skill-card:hover {
+  border-color: var(--crt-green);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.skill-header .mono-label {
+  color: var(--crt-green);
+}
+
+.skill-bar-container {
+  height: 0.5rem;
+  background-color: rgba(57, 255, 20, 0.1);
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+.skill-bar {
+  height: 100%;
+  background-color: var(--crt-green);
+  transition: width 1s ease-out;
+}
+
+.skill-bar-active {
+  animation: pulse-bar 2s ease-in-out infinite;
+}
+
+@keyframes pulse-bar {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.5) drop-shadow(0 0 5px var(--crt-green));
+  }
+}
+
+/* Focus Section */
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.focus-box {
+  aspect-ratio: 1;
+  border: 1px solid rgba(57, 255, 20, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(10, 10, 10, 1);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.focus-box:hover {
+  border-color: var(--crt-green);
+  box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+  background-color: rgba(57, 255, 20, 0.05);
+}
+
+.focus-icon {
+  font-size: 2rem;
+  color: rgba(57, 255, 20, 0.6);
+  margin-bottom: 0.75rem;
+  transition: color 0.2s;
+}
+
+.focus-box:hover .focus-icon {
+  color: var(--crt-green);
+}
+
+.focus-label {
+  font-size: 0.625rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(57, 255, 20, 0.6);
+  transition: color 0.2s;
+}
+
+.focus-box:hover .focus-label {
+  color: var(--crt-green);
+}
+
+.mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}

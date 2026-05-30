@@ -1,0 +1,19 @@
+/* 按钮组件样式 */
+.button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--border-radius-md, 0.5rem);
+  cursor: pointer;
+  font-size: var(--font-size-base, 1rem);
+  transition: all 0.3s ease;
+}
+
+.button-primary {
+  background-color: var(--color-primary, #007bff);
+  color: white;
+}
+
+.button-secondary {
+  background-color: var(--color-secondary, #6c757d);
+  color: white;
+}

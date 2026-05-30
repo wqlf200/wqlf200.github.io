@@ -1,0 +1,26 @@
+/* 应用主样式 */
+.app {
+  min-height: 100vh;
+  background-color: #000000;
+  position: relative;
+}
+
+#root {
+  min-height: 100vh;
+  background-color: #000000;
+}
+
+/* 全局 Antigravity 粒子背景 */
+.antigravity-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.antigravity-bg canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

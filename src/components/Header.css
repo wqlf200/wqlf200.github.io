@@ -1,0 +1,92 @@
+/* 头部导航样式 */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--outline-variant);
+  z-index: 40;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary-dim);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  transition: transform 0.2s;
+}
+
+.logo:hover {
+  transform: skewX(-2deg);
+}
+
+.nav-desktop {
+  display: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: all 0.1s;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+
+.nav-link:hover {
+  color: var(--crt-green);
+  transform: skewX(1deg);
+}
+
+.nav-link:hover::after {
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+}
+
+.nav-link-active {
+  color: var(--crt-green);
+  font-weight: 700;
+  border-bottom: 2px solid var(--crt-green);
+}
+
+.nav-mobile-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--primary-dim);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .nav-mobile-btn {
+    display: none;
+  }
+}
+
+.material-symbols-outlined {
+  font-size: 1.5rem;
+}
