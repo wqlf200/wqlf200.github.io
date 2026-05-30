@@ -161,9 +161,9 @@ npm run preview
 
 ## 🌐 GitHub Pages 部署
 
-仓库：`git@github.com:wqlf200/fionahello.github.io.git`
+仓库：`git@github.com:wqlf200/wqlf200.git`
 
-**访问地址：** https://wqlf200.github.io/fionahello.github.io/
+**访问地址：** https://wqlf200.github.io/wqlf200/
 
 ### 托管方式（docs 文件夹）
 
@@ -185,7 +185,7 @@ git push origin main
 
 | 文件 | 作用 |
 |------|------|
-| `vite.config.js` | `base: '/fionahello.github.io/'`，`outDir: 'docs'` |
+| `vite.config.js` | `base: '/wqlf200/'`，`outDir: 'docs'` |
 | `src/App.jsx` | `BrowserRouter` 使用 `basename` 适配子路径 |
 | `docs/404.html` | SPA 路由刷新支持（构建时从 index.html 复制） |
 | `public/.nojekyll` | 禁用 Jekyll，确保静态资源正常加载 |
