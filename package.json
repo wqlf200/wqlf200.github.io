@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "个人网站",
   "type": "module",
+  "homepage": "https://wqlf200.github.io/fionahello.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build && cp docs/index.html docs/404.html",

@@ -167,7 +167,7 @@ npm run preview
 
 ### 托管方式（docs 文件夹）
 
-1. 在 GitHub 仓库打开 **Settings → Pages**
+1. 打开 GitHub 仓库 **Settings → Pages**
 2. **Source** 选择 **Deploy from a branch**
 3. **Branch** 选 `main`，**Folder** 选 `/docs`
 4. 保存后等待 1–3 分钟生效
@@ -188,7 +188,7 @@ git push origin main
 | `vite.config.js` | `base: '/fionahello.github.io/'`，`outDir: 'docs'` |
 | `src/App.jsx` | `BrowserRouter` 使用 `basename` 适配子路径 |
 | `docs/404.html` | SPA 路由刷新支持（构建时从 index.html 复制） |
-| `public/.nojekyll` | 禁用 Jekyll，确保 `_` 开头资源正常加载 |
+| `public/.nojekyll` | 禁用 Jekyll，确保静态资源正常加载 |
 
 ## 📄 License
 
