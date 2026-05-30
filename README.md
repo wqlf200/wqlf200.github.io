@@ -60,13 +60,44 @@ npm run dev
 npm run build
 ```
 
-构建产物将输出到 `dist` 目录。
+构建产物将输出到 `docs` 目录（用于 GitHub Pages 托管）。
 
 ### 预览生产构建
 
 ```bash
 npm run preview
 ```
+
+## 🌐 GitHub Pages 部署
+
+本站点托管于用户仓库 [wqlf200.github.io](https://github.com/wqlf200/wqlf200.github.io)，访问地址：**https://wqlf200.github.io**
+
+### 托管方式
+
+| 项目 | 配置 |
+|------|------|
+| 仓库名 | `wqlf200.github.io`（用户站点） |
+| 发布源 | `main` 分支 → `/docs` 文件夹 |
+| 站点 URL | `https://wqlf200.github.io/` |
+| Vite base | `/`（用户站点根路径） |
+
+### GitHub 后台设置
+
+1. 打开仓库 **Settings → Pages**
+2. **Build and deployment → Source** 选择 **Deploy from a branch**
+3. **Branch** 选 `main`，文件夹选 **`/docs`**
+4. 保存后等待 1–10 分钟生效
+
+### 本地构建并更新
+
+```bash
+npm run build          # 构建到 docs/，并生成 404.html 与 .nojekyll
+git add docs/ package.json vite.config.js
+git commit -m "Deploy site to docs folder"
+git push origin main
+```
+
+> **说明**：`docs/.nojekyll` 跳过 Jekyll 处理；`docs/404.html` 与 `index.html` 相同，用于 React Router 客户端路由刷新。
 
 ## 🎯 功能页面
 
@@ -158,37 +189,6 @@ npm run preview
 - ✅ 终端美学
 - ✅ 荧光发光效果
 - ✅ 性能优化
-
-## 🚀 GitHub Pages 托管
-
-**线上地址：** https://wqlf200.github.io/wqlf200/
-
-**仓库：** git@github.com:wqlf200/wqlf200.git
-
-### 托管方式（docs 文件夹）
-
-1. 打开 GitHub 仓库 **Settings → Pages**
-2. **Source** 选择 **Deploy from a branch**
-3. **Branch** 选 `main`，**Folder** 选 `/docs`
-4. 保存后等待 1–3 分钟生效
-
-### 本地构建并更新
-
-```bash
-npm run build    # 构建产物输出到 docs/
-git add .
-git commit -m "Deploy site to docs folder"
-git push origin main
-```
-
-### 配置说明
-
-| 文件 | 作用 |
-|------|------|
-| `vite.config.js` | `base: '/wqlf200/'`，`outDir: 'docs'` |
-| `src/App.jsx` | `BrowserRouter` 使用 `basename` 适配子路径 |
-| `docs/404.html` | SPA 路由刷新支持（构建时从 index.html 复制） |
-| `docs/.nojekyll` | 禁用 Jekyll，确保静态资源正常加载 |
 
 ## 📄 License
 

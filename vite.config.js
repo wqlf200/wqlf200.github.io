@@ -1,12 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// 仓库 wqlf200/wqlf200 → https://wqlf200.github.io/wqlf200/
-const repoBase = '/wqlf200/'
-
-export default defineConfig(({ command }) => ({
+// 用户站点 wqlf200.github.io → https://wqlf200.github.io/
+export default defineConfig({
   plugins: [react()],
-  base: command === 'serve' ? '/' : repoBase,
+  base: '/',
   build: {
     outDir: 'docs',
     emptyOutDir: true
@@ -15,4 +13,4 @@ export default defineConfig(({ command }) => ({
     port: 3000,
     open: true
   }
-}))
+})

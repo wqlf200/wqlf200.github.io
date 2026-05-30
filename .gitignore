@@ -6,7 +6,7 @@ node_modules
 # Testing
 coverage
 
-# Production
+# Production (Vite default output only; docs/ is committed for GitHub Pages)
 build
 dist
 

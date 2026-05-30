@@ -10,7 +10,7 @@ import './App.css'
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL.replace(/\/$/, '') || undefined}>
+    <Router>
       {/* 全局粒子背景 */}
       <div className="antigravity-bg" aria-hidden="true">
         <Antigravity
