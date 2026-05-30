@@ -6,7 +6,7 @@
   "homepage": "https://wqlf200.github.io/wqlf200",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp docs/index.html docs/404.html",
+    "build": "vite build && cp docs/index.html docs/404.html && touch docs/.nojekyll",
     "preview": "vite preview --outDir docs"
   },
   "dependencies": {

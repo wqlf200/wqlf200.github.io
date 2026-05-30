@@ -159,11 +159,11 @@ npm run preview
 - ✅ 荧光发光效果
 - ✅ 性能优化
 
-## 🌐 GitHub Pages 部署
+## 🚀 GitHub Pages 托管
 
-仓库：`git@github.com:wqlf200/wqlf200.git`
+**线上地址：** https://wqlf200.github.io/wqlf200/
 
-**访问地址：** https://wqlf200.github.io/wqlf200/
+**仓库：** git@github.com:wqlf200/wqlf200.git
 
 ### 托管方式（docs 文件夹）
 
@@ -188,7 +188,7 @@ git push origin main
 | `vite.config.js` | `base: '/wqlf200/'`，`outDir: 'docs'` |
 | `src/App.jsx` | `BrowserRouter` 使用 `basename` 适配子路径 |
 | `docs/404.html` | SPA 路由刷新支持（构建时从 index.html 复制） |
-| `public/.nojekyll` | 禁用 Jekyll，确保静态资源正常加载 |
+| `docs/.nojekyll` | 禁用 Jekyll，确保静态资源正常加载 |
 
 ## 📄 License
 
