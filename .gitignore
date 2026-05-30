@@ -10,7 +10,7 @@ coverage
 build
 dist
 
-# Large design assets (keep source in repo separately if needed)
+# Large design assets
 stitch_cyberpunk_neon_personal_portfolio.zip
 stitch_cyberpunk_neon_personal_portfolio/
 

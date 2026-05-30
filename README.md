@@ -159,6 +159,37 @@ npm run preview
 - ✅ 荧光发光效果
 - ✅ 性能优化
 
+## 🌐 GitHub Pages 部署
+
+仓库：`git@github.com:wqlf200/fionahello.github.io.git`
+
+**访问地址：** https://wqlf200.github.io/fionahello.github.io/
+
+### 托管方式（docs 文件夹）
+
+1. 在 GitHub 仓库打开 **Settings → Pages**
+2. **Source** 选择 **Deploy from a branch**
+3. **Branch** 选 `main`，**Folder** 选 `/docs`
+4. 保存后等待 1–3 分钟生效
+
+### 本地构建并更新
+
+```bash
+npm run build    # 构建产物输出到 docs/
+git add .
+git commit -m "Deploy site to docs folder"
+git push origin main
+```
+
+### 配置说明
+
+| 文件 | 作用 |
+|------|------|
+| `vite.config.js` | `base: '/fionahello.github.io/'`，`outDir: 'docs'` |
+| `src/App.jsx` | `BrowserRouter` 使用 `basename` 适配子路径 |
+| `docs/404.html` | SPA 路由刷新支持（构建时从 index.html 复制） |
+| `public/.nojekyll` | 禁用 Jekyll，确保 `_` 开头资源正常加载 |
+
 ## 📄 License
 
 MIT License
@@ -174,30 +205,3 @@ MIT License
 ---
 
 **SYSTEM_STATUS: OPTIMAL** | **UPTIME: 99.99%** | **LATENCY: <50MS**
-
-## GitHub Pages 部署
-
-站点地址：**https://fionahello.github.io/**
-
-### 仓库设置（首次）
-
-1. 打开 [仓库 Settings → Pages](https://github.com/wqlf200/fionahello.github.io/settings/pages)
-2. **Build and deployment → Source** 选择 **Deploy from a branch**
-3. **Branch** 选 `main`，**Folder** 选 `/docs`
-4. 保存后等待 1–3 分钟生效
-
-### 本地构建并更新
-
-```bash
-npm run build
-git add docs/ src/ vite.config.js package.json
-git commit -m "Update site build"
-git push origin main
-```
-
-### 技术说明
-
-- `base: '/'` — 用户站点 `*.github.io` 从根路径提供
-- 构建输出到 `docs/` 文件夹
-- `404.html` 复制自 `index.html`，支持 React Router 子路由刷新
-- `.nojekyll` 防止 Jekyll 处理静态资源
